@@ -70,6 +70,13 @@ void TOE::UNDO() {
 		}
 	}
 
+	if (XO == "X") {
+		inc = 0;
+	}
+	if (XO == "O"){
+		inc = 1;
+	}
+
 	system("CLS");
 	displayMenu();
 	displayArray();
@@ -204,4 +211,8 @@ void TOE::resetArray() {
 	}
 	track = -1;
 	inc = 0;
+}
+
+string TOE::returnXO() {
+	return XO;
 }
