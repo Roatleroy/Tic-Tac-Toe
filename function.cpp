@@ -11,11 +11,11 @@
 }
 
 void TOE::displayMenu() {
-	cout << "Menu: KEEP LETTERS CAPITALIZED" << endl
+	cout << "Menu: Type in these letters (KEEP LETTERS CAPITALIZED)" << endl
 		<< " TL TC TR" << endl
 		<< " CL CC CR" << endl
 		<< " BL BC BR" << endl 
-		<< "Or Type ( UNDO ) if you want to place somewhere else" << endl << endl;
+		<< "Or Type ( UNDO ) if you want to undo a move" << endl << endl;
 }
 
 void TOE::displayArray() {
