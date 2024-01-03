@@ -7,7 +7,7 @@
 			array[i][k] = 'I';
 		}
 	}
-
+	inc = 0;
 }
 
 
@@ -30,7 +30,7 @@ void TOE::displayArray() {
 	}
 }
 
-void TOE::modifyArrayO() {
+void TOE::modifyArray() {
 
 	cout << "Type which sector you want to place:" << endl;
 	cin >> place;
@@ -41,8 +41,13 @@ void TOE::modifyArrayO() {
 		return;
 	}
 	
-
-	XO = 'O';
+	if (inc == 2) {
+		inc = 0;
+	}
+	if (inc == 0)
+		XO = "X";
+	if (inc == 1)
+		XO = "O";
 
 	track++;
 	keeps[track] = place;
@@ -50,41 +55,6 @@ void TOE::modifyArrayO() {
 	changePosition();
 		
 }
-
-
-void TOE::modifyArrayX() {
-
-	cout << "Type which sector you want to place:" << endl;
-	cin >> place;
-	
-	
-	if (place == "UNDO") {
-		UNDO();
-		return;
-	}
-
-
-	XO = 'X';
-
-	track++;
-	keeps[track] = place;
-
-	changePosition();
-
-}
-
-void TOE::ResetTrack() {
-	track = -1;
-}
-
-void TOE::ifStatements() {
-	if (XO == "X")
-		modifyArrayX();
-
-	if (XO == "O")
-		modifyArrayO();
-}
-
 
 void TOE::UNDO() {
 
@@ -105,16 +75,13 @@ void TOE::UNDO() {
 	displayArray();
 	cout << endl;
 	track--;
-	ifStatements();
+	modifyArray();
 	
 }
 
 
 
 bool TOE::changePosition() {
-	
-
-	//IMPLEMENT UNDO FUNCTION
 
 	int increment = 0;
 
@@ -141,16 +108,18 @@ bool TOE::changePosition() {
 					cout << endl;
 					cout << "That postion is already filled! " << endl << endl;
 
-					ifStatements();
+					modifyArray();
 					break;
 				}
 	
 			if (XO == "X") {
 				array[collect[0]][collect[1]] = "X";
+				++inc;
 			}
 
 			if (XO == "O") {
 				array[collect[0]][collect[1]] = "O";
+				++inc;
 			}
 		}
 	}
@@ -163,7 +132,7 @@ bool TOE::changePosition() {
 
 		cout << endl;
 		cout << "Not a known value! " << endl << endl;
-		ifStatements();
+		modifyArray();
 	}
 
 	return true;
@@ -175,6 +144,8 @@ void TOE::resetArray() {
 			array[i][k] = 'I';
 		}
 	}
+	track = -1;
+	inc = 0;
 }
 
 // Main function: Checks if player "O" has won
@@ -233,8 +204,4 @@ bool TOE::isdraw() {
 	}
 	else
 		return false;
-}
-
-string TOE::returnXO() {
-	return XO;
 }

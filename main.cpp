@@ -15,6 +15,7 @@ int main() {
 	while (win) {
 
 		while (din) {
+			system("CLS");
 
 			TICKTACK.displayMenu();
 
@@ -22,9 +23,9 @@ int main() {
 
 			cout << endl;
 
-			TICKTACK.modifyArrayX();
+			TICKTACK.modifyArray();
 
-			if (TICKTACK.checkifWin(TICKTACK.returnXO())) {
+			if (TICKTACK.checkifWin()) {
 				system("CLS");
 
 				TICKTACK.displayMenu();
@@ -34,7 +35,7 @@ int main() {
 
 				cin.ignore();
 				cin.ignore();
-				
+
 				din = false;
 
 				system("CLS");
@@ -45,14 +46,19 @@ int main() {
 			if (TICKTACK.isdraw()) {
 				din = false;
 
-				cin.ignore();
-				cin.ignore();
-
 				system("CLS");
+
+				TICKTACK.displayMenu();
+				TICKTACK.displayArray();
+
+				cin.ignore();
+				cin.ignore();
 
 				break;
 			}
-
+			
+		}
+			
 			system("CLS");
 
 			TICKTACK.displayMenu();
@@ -60,32 +66,6 @@ int main() {
 			TICKTACK.displayArray();
 
 			cout << endl;
-
-			TICKTACK.modifyArrayO();
-
-			if (TICKTACK.checkifWin(TICKTACK.returnXO())) {
-				system("CLS");
-
-				TICKTACK.displayMenu();
-				TICKTACK.displayArray();
-
-				cout << endl << " You win " << TICKTACK.returnXO() << endl;
-
-				cin.ignore();
-				cin.ignore();
-
-				din = false;
-			}
-
-			if (TICKTACK.isdraw()) {
-				din = false;
-
-				cin.ignore();
-				cin.ignore();
-			}
-
-			system("CLS");
-		}
 
 		cout << " Would you like to play again? (Types Y for yes and N for no): " << endl;
 		cin >> kin;
@@ -97,8 +77,6 @@ int main() {
 		}
 		else
 			win = false;
-
-		TICKTACK.ResetTrack();
 
 		system("CLS");
 
