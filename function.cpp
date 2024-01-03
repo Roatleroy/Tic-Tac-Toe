@@ -178,7 +178,7 @@ void TOE::resetArray() {
 }
 
 // Main function: Checks if player "O" has won
-bool TOE::checkifWin(string XO) {
+bool TOE::checkifWin() {
 	vector<vector<int>> winConditions = {
 		{0, 0, 0, 1, 0, 2}, // Top row
 		{1, 0, 1, 1, 1, 2}, // Middle row

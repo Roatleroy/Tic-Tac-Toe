@@ -43,7 +43,7 @@ public:
 	void resetArray();
 	
 	// Main function: Checks if player "O" has won
-	bool checkifWin(string XO);
+	bool checkifWin();
 
 	// Helper function: Checks if a specified player has won
 	bool winCheck(vector<vector<int>> winConditions, string playerSymbol);

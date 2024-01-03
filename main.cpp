@@ -37,8 +37,6 @@ int main() {
 				
 				din = false;
 
-				//Test Commnent
-
 				system("CLS");
 
 				break;
