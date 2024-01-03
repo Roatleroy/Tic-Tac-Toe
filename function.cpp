@@ -10,7 +10,6 @@
 	inc = 0;
 }
 
-
 void TOE::displayMenu() {
 	cout << "Menu: KEEP LETTERS CAPITALIZED" << endl
 		<< " TL TC TR" << endl
@@ -143,7 +142,6 @@ bool TOE::changePosition() {
 	return true;
 }
 
-
 // Main function: Checks if player "O" has won
 bool TOE::checkifWin() {
 	vector<vector<int>> winConditions = {
@@ -163,8 +161,6 @@ bool TOE::checkifWin() {
 		return winCheck(winConditions, "O");
 }
 
-
-
 // Helper function: Checks if a specified player has won
 bool TOE::winCheck(vector<vector<int>> winConditions, string playerSymbol) {
 
@@ -179,7 +175,6 @@ bool TOE::winCheck(vector<vector<int>> winConditions, string playerSymbol) {
 	}
 	return false;
 }
-
 
 bool TOE::isdraw() {
 	int Plus = 0;
@@ -201,7 +196,6 @@ bool TOE::isdraw() {
 	else
 		return false;
 }
-
 
 void TOE::resetArray() {
 	for (int i = 0; i < 3; ++i) {

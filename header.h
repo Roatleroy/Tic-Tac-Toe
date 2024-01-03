@@ -50,6 +50,7 @@ public:
 	//Undoes the last move so player can place somewhere else
 	void UNDO();
 
+	//returns the current value of XO
 	string returnXO();
 private:
 	string array[3][3];
