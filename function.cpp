@@ -79,8 +79,6 @@ void TOE::UNDO() {
 	
 }
 
-
-
 bool TOE::changePosition() {
 
 	int increment = 0;
@@ -138,15 +136,6 @@ bool TOE::changePosition() {
 	return true;
 }
 
-void TOE::resetArray() {
-	for (int i = 0; i < 3; ++i) {
-		for (int k = 0; k < 3; ++k) {
-			array[i][k] = 'I';
-		}
-	}
-	track = -1;
-	inc = 0;
-}
 
 // Main function: Checks if player "O" has won
 bool TOE::checkifWin() {
@@ -204,4 +193,15 @@ bool TOE::isdraw() {
 	}
 	else
 		return false;
+}
+
+
+void TOE::resetArray() {
+	for (int i = 0; i < 3; ++i) {
+		for (int k = 0; k < 3; ++k) {
+			array[i][k] = 'I';
+		}
+	}
+	track = -1;
+	inc = 0;
 }
