@@ -46,11 +46,6 @@ int main() {
 			if (TICKTACK.isdraw()) {
 				din = false;
 
-				system("CLS");
-
-				TICKTACK.displayMenu();
-				TICKTACK.displayArray();
-
 				cin.ignore();
 				cin.ignore();
 
