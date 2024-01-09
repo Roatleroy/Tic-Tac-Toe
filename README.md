@@ -12,6 +12,11 @@
 The project started as a goal to learn C++. 
 
 <h2> Changelog </h2>
+
+<strong>Future: </strong>
+- Undo function will break game if undo is the first input
+- Change undo function to only implement once every turn and not at the beginning
+
 <strong>0.5 </strong> 
 
 - Created undo function
