@@ -15,7 +15,7 @@ The project started as a goal to learn C++.
 <strong>0.5 </strong> 
 
 - Created undo function
-- Made change array function code more compact
+- Made the modifyarray function code more compact
 - Tidy up the code
 
 <strong>0.4 </strong> 
