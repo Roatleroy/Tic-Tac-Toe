@@ -192,6 +192,7 @@ bool TOE::isdraw() {
 	if (Plus == 0) {
 		cout << endl << "THE GAME IS A DRAW!" << endl;
 		return true;
+		++draws;
 	}
 	else
 		return false;

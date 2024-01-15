@@ -56,5 +56,7 @@ private:
 	string array[3][3];
 	string place;
 	string XO;
-
+	int winsO;
+	int winsX;
+	int draws;
 };
