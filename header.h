@@ -52,11 +52,18 @@ public:
 
 	//returns the current value of XO
 	string returnXO();
+
+	void ADDWIN();
+
+	void displayWINS();
+
+
+
 private:
 	string array[3][3];
 	string place;
 	string XO;
-	int winsO;
-	int winsX;
+	int winsO = 0;
+	int winsX = 0;
 	int draws;
 };

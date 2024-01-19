@@ -21,6 +21,8 @@ int main() {
 
 			TICKTACK.displayArray();
 
+			TICKTACK.displayWINS();
+
 			cout << endl;
 
 			TICKTACK.modifyArray();
@@ -32,6 +34,8 @@ int main() {
 				TICKTACK.displayArray();
 
 				cout << endl << TICKTACK.returnXO() << " wins!" << endl;
+
+				TICKTACK.ADDWIN();
 
 				cin.ignore();
 				cin.ignore();
@@ -59,6 +63,8 @@ int main() {
 			TICKTACK.displayMenu();
 
 			TICKTACK.displayArray();
+
+			TICKTACK.displayWINS();
 
 			cout << endl;
 

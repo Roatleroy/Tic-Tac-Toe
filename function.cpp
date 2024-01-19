@@ -10,6 +10,25 @@
 	inc = 0;
 }
 
+ void TOE::ADDWIN() {
+	 string xo = returnXO();
+
+	 if (xo == "X") {
+		 winsX++;
+	 }
+	 if (xo == "O") {
+		 winsO++;
+	 }
+ }
+
+ void TOE::displayWINS() {
+
+	 cout << endl << endl << "    X WINS:    " << "O WINS:  " << endl;
+	 cout << "    -------   " << " -------" << endl;
+	 cout << "    " << winsX << "          " << winsO << endl;
+
+ }
+
 void TOE::displayMenu() {
 	cout << "Menu: Type in these letters (KEEP LETTERS CAPITALIZED)" << endl
 		<< " TL TC TR" << endl
