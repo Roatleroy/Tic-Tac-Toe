@@ -50,9 +50,10 @@ void TOE::displayArray() {
 
 void TOE::modifyArray() {
 
+	track++;
+
 	cout << "Type which sector you want to place:" << endl;
 	cin >> place;
-	
 	
 	if (place == "UNDO") {
 		UNDO();
@@ -67,7 +68,6 @@ void TOE::modifyArray() {
 	if (inc == 1)
 		XO = "O";
 
-	track++;
 	keeps[track] = place;
 
 	changePosition();
@@ -75,6 +75,11 @@ void TOE::modifyArray() {
 }
 
 void TOE::UNDO() {
+
+	if (track == 1) {
+		track--;
+		return;
+	}
 
 	vector<vector<int>> ArrayCombos = { {0, 0}, {0, 1}, {0, 2}, {1, 0}, {1, 1}, {1, 2}, {2, 0}, {2, 1}, {2, 2} };
 

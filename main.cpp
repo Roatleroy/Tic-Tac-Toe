@@ -6,11 +6,8 @@ int main() {
 	bool win = true;
 	bool din = true;
 	char kin;
-	string stringstring;
-
 
 	TICKTACK.createArray();
-
 
 	while (win) {
 
