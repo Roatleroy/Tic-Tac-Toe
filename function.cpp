@@ -7,6 +7,7 @@
 			array[i][k] = 'I';
 		}
 	}
+
 	inc = 0;
 }
 
@@ -20,6 +21,7 @@
 		 winsO++;
 	 }
  }
+ 
 
  void TOE::displayWINS() {
 
@@ -50,8 +52,6 @@ void TOE::displayArray() {
 
 void TOE::modifyArray() {
 
-	track++;
-
 	cout << "Type which sector you want to place:" << endl;
 	cin >> place;
 	
@@ -68,6 +68,7 @@ void TOE::modifyArray() {
 	if (inc == 1)
 		XO = "O";
 
+	track++;
 	keeps[track] = place;
 
 	changePosition();
@@ -75,11 +76,6 @@ void TOE::modifyArray() {
 }
 
 void TOE::UNDO() {
-
-	if (track == 1) {
-		track--;
-		return;
-	}
 
 	vector<vector<int>> ArrayCombos = { {0, 0}, {0, 1}, {0, 2}, {1, 0}, {1, 1}, {1, 2}, {2, 0}, {2, 1}, {2, 2} };
 
@@ -175,13 +171,14 @@ bool TOE::checkifWin() {
 		{0, 0, 1, 1, 2, 2}, // Top left to bottom right
 		{2, 0, 1, 1, 0, 2}, // Bottom left to top right
 		{0, 0, 1, 0, 2, 0}, // Left column
-		{0, 2, 1, 2, 2, 2}  // Right column
+		{0, 2, 1, 2, 2, 2}, // Right column
+		{0, 1, 1, 1, 2, 1}  // Center column
 	};
 
 	if (XO == "X") {
 		return winCheck(winConditions, "X");
 	}
-	else
+	if (XO == "O")
 		return winCheck(winConditions, "O");
 }
 
