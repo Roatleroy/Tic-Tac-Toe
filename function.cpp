@@ -63,6 +63,7 @@ void TOE::modifyArray() {
 	if (inc == 2) {
 		inc = 0;
 	}
+
 	if (inc == 0)
 		XO = "X";
 	if (inc == 1)
