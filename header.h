@@ -3,7 +3,7 @@
 #include "iostream"
 #include <stdlib.h> 
 #include <cstring>
-
+#include <ctype.h>
 using namespace std;
 
 class bob {
@@ -12,7 +12,7 @@ public:
 int track = -1;
 string keeps[9];
 int inc = 0;
-
+int undo = 2;
 };
 
 
@@ -52,6 +52,7 @@ public:
 
 	//returns the current value of XO
 	string returnXO();
+
 
 	void ADDWIN();
 

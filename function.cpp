@@ -43,7 +43,8 @@ void TOE::displayArray() {
 
 	for (int i = 0; i < 3; ++i) {
 		cout << "  ";
-		for (int k = 0; k < 3; ++k) {
+		for (int k = 0; k < 3; ++k) 
+		{
 			cout << array[i][k] << " ";
 		}
 		cout << endl;
@@ -54,20 +55,57 @@ void TOE::modifyArray() {
 
 	cout << "Type which sector you want to place:" << endl;
 	cin >> place;
+
+	for (int i = 0, n = place.length(); i < n; i++)
+	{
+		place[i] = toupper(place[i]);
+	}
 	
-	if (place == "UNDO") {
+	if (place == "UNDO") 
+	{
+		if (XO == "X" && undo != 1)
+		{
+			system("CLS");
+			
+			displayMenu();
+			displayArray();
+			displayWINS();
+			cout << "\n" << "Can't undo twice a turn!" << "\n";
+			modifyArray();
+			
+			return;
+		}
+		if (XO == "O" && undo != 2)
+		{
+			system("CLS");
+
+			displayMenu();
+			displayArray();
+			displayWINS();
+			cout << "\n" << "Can't undo twice a turn!" << "\n";
+			modifyArray();
+
+			return;
+		}
+
 		UNDO();
 		return;
 	}
-	
-	if (inc == 2) {
+
+	if (inc == 2)
+	{
 		inc = 0;
 	}
 
 	if (inc == 0)
+	{
 		XO = "X";
+	}
+
 	if (inc == 1)
+	{
 		XO = "O";
+	}
 
 	track++;
 	keeps[track] = place;
@@ -90,20 +128,24 @@ void TOE::UNDO() {
 		}
 	}
 
-	if (XO == "X") {
+	if (XO == "X")
+	{
 		inc = 0;
+		undo = 2;
 	}
-	if (XO == "O"){
+	if (XO == "O")
+	{
 		inc = 1;
+		undo = 1;
 	}
 
 	system("CLS");
 	displayMenu();
 	displayArray();
+	displayWINS();
 	cout << endl;
 	track--;
 	modifyArray();
-	
 }
 
 bool TOE::changePosition() {
@@ -139,11 +181,13 @@ bool TOE::changePosition() {
 	
 			if (XO == "X") {
 				array[collect[0]][collect[1]] = "X";
+				undo = 1;
 				++inc;
 			}
 
 			if (XO == "O") {
 				array[collect[0]][collect[1]] = "O";
+				undo = 2;
 				++inc;
 			}
 		}

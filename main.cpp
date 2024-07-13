@@ -18,7 +18,7 @@ int main() {
 
 			TICKTACK.displayArray();
 
-			//TICKTACK.displayWINS();
+			TICKTACK.displayWINS();
 
 			cout << endl;
 
@@ -61,7 +61,7 @@ int main() {
 
 			TICKTACK.displayArray();
 
-			//TICKTACK.displayWINS();
+			TICKTACK.displayWINS();
 
 			cout << endl;
 
